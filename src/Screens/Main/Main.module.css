@@ -1,0 +1,7 @@
+.Main {
+   width: 100%;
+   padding: 40px 20px;
+   display: flex;
+   background-color:  #DADED4;
+   min-height: 100vh;
+}
