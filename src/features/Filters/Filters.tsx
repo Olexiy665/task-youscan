@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
-import CheckboxItem from './components/CheckboxItem';
+import React from 'react';
+import { FILTERS_CATEGORIES } from '../../constants/filters-init';
+
+import styles from './Filters.module.css';
+import { FilterGroupMemo } from './components/FilterGroup';
 
 export const Filters = () => {
-  const [value, setValue] = useState(false);
-  const changeHandler = () => {
-    console.log('here-here');
-    setValue(!value);
+  const changeHandler = (groupValue: string, filterValue: string) => {
+    const params = new URLSearchParams(window.location.search);
+    params.delete(groupValue);
+    params.append(groupValue, filterValue);
+    window.history.replaceState(null, '', `?${params.toString()}`);
   };
+  const params = new URLSearchParams(window.location.search);
+
   return (
-    <div>
-      <CheckboxItem isSelected={value} onChange={changeHandler} label="Some-label" value="some value" />
+    <div className={styles.Filters}>
+      {FILTERS_CATEGORIES.map((category) => (
+        <FilterGroupMemo
+          onChange={changeHandler}
+          selectedValue={params.get(category.value) || category.defaultValue}
+          filters={category.filters}
+          value={category.value}
+          label={category.label}
+          key={category.value}
+        />
+      ))}
     </div>
   );
 };

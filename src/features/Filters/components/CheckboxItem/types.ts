@@ -1,6 +1,6 @@
 export type Props = {
   label: string;
   value: string;
-  onChange: () => void;
+  onChange: (p: string) => void;
   isSelected: boolean;
 };
