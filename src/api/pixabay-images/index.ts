@@ -5,10 +5,9 @@ import { PixabayResponse } from './types';
 
 export const pixabayImages = {
   async getImages(params?: string) {
-    console.log(params, 'here');
     const searchParams = new URLSearchParams();
     searchParams.append('key', PIXABAY_API_KEY);
-
+    searchParams.append('per_page', '150');
     const queryString = searchParams.toString();
     const url = `${PIXABAY_API}/?${queryString}&${params}`;
     const { parsedBody } = await HttpGet<PixabayResponse>(url);
