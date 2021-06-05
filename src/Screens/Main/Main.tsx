@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { pixabayImages } from '../../api/pixabay-images';
+import Filters from '../../features/Filters';
 import styles from './Main.module.css';
 
 export const Main = () => {
@@ -16,5 +17,9 @@ export const Main = () => {
 
     fetchAPI();
   }, []);
-  return <div className={styles.Main}>Main screen;</div>;
+  return (
+    <div className={styles.Main}>
+      <Filters />
+    </div>
+  );
 };

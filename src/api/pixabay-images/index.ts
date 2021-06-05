@@ -8,6 +8,7 @@ export const pixabayImages = {
     console.log(params, 'here');
     const searchParams = new URLSearchParams();
     searchParams.append('key', PIXABAY_API_KEY);
+
     const queryString = searchParams.toString();
     const url = `${PIXABAY_API}/?${queryString}`;
     const { parsedBody } = await HttpGet<PixabayResponse>(url);
