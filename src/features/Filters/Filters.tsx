@@ -28,6 +28,7 @@ export const Filters = () => {
     const stringifiedParams = params.toString();
     updateStore(stringifiedParams);
   };
+
   return (
     <div className={styles.Filters}>
       {FILTERS_CATEGORIES.map((category) => (

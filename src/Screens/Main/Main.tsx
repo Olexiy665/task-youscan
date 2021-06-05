@@ -1,22 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { pixabayImages } from '../../api/pixabay-images';
 import Filters from '../../features/Filters';
+import { useImages } from '../../hooks/useImages';
 import styles from './Main.module.css';
 
 export const Main = () => {
-  useEffect(() => {
-    async function fetchAPI() {
-      try {
-        const data = await pixabayImages.getImages();
-        console.log(data, 'here-here');
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    fetchAPI();
-  }, []);
+  const { images, status } = useImages();
+  console.log(images, status);
   return (
     <div className={styles.Main}>
       <Filters />
