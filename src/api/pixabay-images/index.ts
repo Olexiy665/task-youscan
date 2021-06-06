@@ -7,7 +7,7 @@ export const pixabayImages = {
   async getImages(params?: string) {
     const searchParams = new URLSearchParams();
     searchParams.append('key', PIXABAY_API_KEY);
-    searchParams.append('per_page', '150');
+    searchParams.append('per_page', '200');
     const queryString = searchParams.toString();
     const url = `${PIXABAY_API}/?${queryString}&${params}`;
     const { parsedBody } = await HttpGet<PixabayResponse>(url);

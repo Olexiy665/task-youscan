@@ -1,10 +1,6 @@
 .ImageList {
     width: calc(100% - 400px);
-    column-count: 4;
-    column-gap: 5px;
-    /* display: grid; */
-    /* grid-template-columns: repeat(4, 1fr); */
-    grid-template-rows: masonry;
-    
+    column-count: 5;
+    column-gap: 10px;
 }
 

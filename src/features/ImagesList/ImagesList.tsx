@@ -13,7 +13,7 @@ export const ImagesList = () => {
       {images.map((item) =>
       /* eslint-disable */
       /* @ts-ignore */
-        (<ImageListItem previewHeight={item.previewHeight} previewWidth={item.previewWidth} key={item.id} previewURL={item.previewURL} />
+        (<ImageListItem previewHeight={item.previewHeight} user={item.user} type={item.type} imageHeight={item.imageHeight} imageWidth={item.imageWidth} previewWidth={item.previewWidth} key={item.id} previewURL={item.previewURL} />
         ))}
     </div>
   );
