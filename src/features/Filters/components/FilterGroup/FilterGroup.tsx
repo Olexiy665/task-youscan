@@ -13,7 +13,7 @@ export const FilterGroup = ({
     <div className={styles.FilterGroup}>
       <h3>{label}</h3>
       <div className={styles.Group}>
-        {filters.map((filter) => <CheckboxItem isSelected={selectedValue === filter.value} onChange={groupChangeHandler} value={filter.value} label={filter.label} key={`${value}-${filter.value}`} />)}
+        {filters.map((filter) => <CheckboxItem name={`${value}-${filter.value}`} isSelected={selectedValue === filter.value} onChange={groupChangeHandler} value={filter.value} label={filter.label} key={`${value}-${filter.value}`} />)}
       </div>
     </div>
   );

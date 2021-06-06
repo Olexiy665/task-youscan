@@ -3,4 +3,5 @@ export type Props = {
   value: string;
   onChange: (p: string) => void;
   isSelected: boolean;
+  name: string;
 };
