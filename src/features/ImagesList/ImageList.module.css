@@ -1,0 +1,7 @@
+.ImageList {
+    width: calc(100% - 340px);
+    column-count: 5;
+    column-gap: 10px;
+    margin-left: auto;
+}
+
