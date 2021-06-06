@@ -11,7 +11,7 @@ export const CheckboxItem = ({
   };
   return (
     <label
-      htmlFor={label}
+      htmlFor={name}
       className={classSet(styles.CheckboxItem, {
         [styles.isSelected]: isSelected,
       })}
