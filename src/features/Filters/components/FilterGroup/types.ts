@@ -9,4 +9,5 @@ export type Props = {
   filters: FilterItem[];
   onChange: (value: string, filterValue: string) => void;
   selectedValue: string;
+
 };
