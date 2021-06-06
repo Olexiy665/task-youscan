@@ -4,7 +4,7 @@ import styles from './CheckboxItem.module.css';
 import { Props } from './types';
 
 export const CheckboxItem = ({
-  label, value, isSelected, onChange,
+  label, value, isSelected, onChange, name,
 }: Props) => {
   const clickHandler = () => {
     onChange(value);
@@ -30,7 +30,7 @@ export const CheckboxItem = ({
         </svg>
       </div>
       <span className={styles.Label}>{label}</span>
-      <input onClick={clickHandler} id={label} name={label} value={value} />
+      <input onClick={clickHandler} id={name} name={name} value={value} />
     </label>
   );
 };
