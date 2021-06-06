@@ -1,15 +1,16 @@
 import React from 'react';
-import { useImages } from '../../hooks/useImages';
+import { FetchStatus, useImages } from '../../hooks/useImages';
 import ImageListItem from './components/ImageListItem';
+import LoadingBar from './components/LoadingBar';
 import styles from './ImageList.module.css';
 
 export const ImagesList = () => {
   const { images, status } = useImages();
-  console.log(images, status);
+
   // @ts-ignore
   return (
     <div className={styles.ImageList}>
-
+      <LoadingBar isActive={status === FetchStatus.LOADING || !images.length} />
       {images.map((item) =>
       /* eslint-disable */
       /* @ts-ignore */
